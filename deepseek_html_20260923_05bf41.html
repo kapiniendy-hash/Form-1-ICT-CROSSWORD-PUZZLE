@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="description" content="ICT Crossroad Puzzle - Learn ICT the fun way!" />
+  <title>ICT Crossroad Puzzle</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧩</text></svg>" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="app-header">
+    <div class="logo">
+      <span class="logo-icon">🧩</span>
+      <h1>ICT Crossroad Puzzle</h1>
+    </div>
+    <div class="header-stats">
+      <div class="stat"><span class="stat-label">Score</span><span id="scoreDisplay">0</span></div>
+      <div class="stat"><span class="stat-label">Level</span><span id="levelDisplay">1</span></div>
+      <div class="stat"><span class="stat-label">Lives</span><span id="livesDisplay">❤️❤️❤️</span></div>
+    </div>
+  </header>
+
+  <!-- ===== START SCREEN ===== -->
+  <section id="startScreen" class="screen active">
+    <div class="card hero">
+      <h2>Welcome to ICT Crossroad Puzzle</h2>
+      <p>Test your knowledge of the <strong>ICT Ordinary Level Syllabus (Form 1 &amp; 2)</strong>. Answer questions correctly to move forward. Choose the right path at every crossroad!</p>
+
+      <div class="topic-select">
+        <h3>Select Topic</h3>
+        <div class="topic-grid" id="topicGrid"></div>
+      </div>
+
+      <div class="difficulty-select">
+        <h3>Select Difficulty</h3>
+        <div class="difficulty-buttons" id="difficultyButtons">
+          <button data-diff="easy" class="diff-btn active">Easy</button>
+          <button data-diff="medium" class="diff-btn">Medium</button>
+          <button data-diff="hard" class="diff-btn">Hard</button>
+        </div>
+      </div>
+
+      <button id="startBtn" class="btn primary big">▶ Start Game</button>
+    </div>
+  </section>
+
+  <!-- ===== GAME SCREEN ===== -->
+  <section id="gameScreen" class="screen">
+    <div class="game-topbar">
+      <button id="quitBtn" class="btn ghost small">⟵ Quit</button>
+      <span id="progressText" class="progress-text">Question 1 of 10</span>
+      <span id="topicBadge" class="topic-badge">Introduction to ICT</span>
+    </div>
+
+    <div class="crossroad">
+      <!-- Question card -->
+      <div class="card question-card" id="questionCard">
+        <p id="questionText" class="question-text"></p>
+      </div>
+
+      <!-- Paths -->
+      <div class="paths" id="paths">
+        <button class="path path-left" data-index="0">
+          <span class="path-letter">A</span>
+          <span class="path-text"></span>
+        </button>
+        <button class="path path-right" data-index="1">
+          <span class="path-letter">B</span>
+          <span class="path-text"></span>
+        </button>
+      </div>
+      <div class="paths" id="paths2">
+        <button class="path path-left" data-index="2">
+          <span class="path-letter">C</span>
+          <span class="path-text"></span>
+        </button>
+        <button class="path path-right" data-index="3">
+          <span class="path-letter">D</span>
+          <span class="path-text"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+  </section>
+
+  <!-- ===== RESULT SCREEN ===== -->
+  <section id="resultScreen" class="screen">
+    <div class="card hero">
+      <h2 id="resultTitle">Game Over</h2>
+      <p id="resultMessage"></p>
+      <div class="result-stats">
+        <div class="stat big"><span>Final Score</span><strong id="finalScore">0</strong></div>
+        <div class="stat big"><span>Correct</span><strong id="finalCorrect">0</strong></div>
+        <div class="stat big"><span>Accuracy</span><strong id="finalAccuracy">0%</strong></div>
+      </div>
+      <button id="playAgainBtn" class="btn primary big">🔁 Play Again</button>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="app-footer">
+    <p>© 2026 ICT Crossroad Puzzle • Aligned with ECZ ICT Ordinary Level Syllabus</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
